@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STIC Restaurante</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>🍔 STIC Restaurante</h1>
+    <p>Las mejores comidas rápidas</p>
+</header>
+
+<section class="menu">
+    <div class="card">
+        <img src="{{ url_for('static', filename='img/hamburguesa.jpg') }}" alt="Hamburguesa">
+        <h2>Hamburguesa Especial</h2>
+        <p>$18.000</p>
+        <button onclick="agregarCarrito('Hamburguesa Especial', 18000)">Ordenar</button>
+    </div>
+
+    <div class="card">
+        <img src="{{ url_for('static', filename='img/pizza.jpg') }}" alt="Pizza">
+        <h2>Pizza Personal</h2>
+        <p>$25.000</p>
+        <button onclick="agregarCarrito('Pizza Personal', 25000)">Ordenar</button>
+    </div>
+
+    <div class="card">
+        <img src="{{ url_for('static', filename='img/perro.jpg') }}" alt="Perro Caliente">
+        <h2>Perro Especial</h2>
+        <p>$15.000</p>
+        <button onclick="agregarCarrito('Perro Especial', 15000)">Ordenar</button>
+    </div>
+</section>
+
+<section class="carrito">
+    <h2>🛒 Carrito de compras</h2>
+    <ul id="lista-carrito"></ul>
+    <h3>Total: $<span id="total">0</span></h3>
+    <button class="btn-whatsapp" onclick="enviarWhatsApp()">Enviar pedido por WhatsApp</button>
+</section>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
